@@ -3326,28 +3326,6 @@ for (let i = 0; i < lines1.length; i++) {
     }
 }
 
-
-function filterByProperty(array, prop, value) {
-    let filtered = [];
-    for (let i = 0; i < array.length; i++) {
-        try {
-            if (array[i][prop] == value) {
-                filtered.push(array[i])
-            }
-        } catch (e) {
-
-        }
-    }
-    return filtered;
-}
-
-function printColor(byRGB) {
-    console.log("Page: " + byRGB[0]["Page"])
-    console.log("The Color name: " + byRGB[0]["The color name"])
-    console.log("The Color ID: " + byRGB[0]["ID"])
-    console.log("RGB: " + byRGB[0]["RGB"])
-}
-
 function fromStringToRGBArr(value) {
     if (typeof value === "undefined") {
         return "undefined"
@@ -3414,6 +3392,30 @@ function matchColorFamily(arrObj, strRGB, familyName) {
     return filtered;
 }
 
+function matchARRColorFamily(arrObj, arrRGB, familyName) {
+    let filtered = [];
+    let d = 1000;
+    let temp = 0;
+    let color;
+    let second;
+    let third;
+    for (let i = 1; i < arrObj.length; i++) {
+        temp = compareRGB(fromStringToRGBArr(arrObj[i]["RGB"]), arrRGB);
+        if (arrObj[i]["The color family"] === familyName || familyName === "none") {
+            if (temp < d) {
+                d = temp;
+                color = arrObj[i];
+                second = arrObj[i + 1];
+                third = arrObj[i - 1];
+            }
+        }
+    }
+    filtered.push(color);
+    filtered.push(second);
+    filtered.push(third);
+    return filtered;
+}
+
 
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -3424,49 +3426,56 @@ function hexToRgb(hex) {
     } : null;
 }
 
+function searchFamily(arrObj, arrRGB, familyName) {
+    let filtered = [];
+    let d = 1000;
+    let temp = 0;
+    let color;
+    let second;
+    let third;
+
+    for (let i = 1; i < arrObj.length; i++) {
+        if (arrObj[i]["The color family"] === familyName || familyName === "none") {
+            if (temp < d) {
+                d = temp;
+                color = arrObj[i];
+                second = arrObj[i + 1];
+                third = arrObj[i - 1];
+            }
+        }
+    }
+    filtered.push(color);
+    filtered.push(second);
+    filtered.push(third);
+    return filtered;
+}
+
 var colorPicker = new ImageColorPicker('.thumbnail img', {
     preview: '.preview',
     clicked: function (data) {
+        // instance data
+        let matchU = matchColorFamily(arrObj1, data.result_rgb_string, familyNameLive)
+        document.getElementById('PlatteU').style.backgroundColor = fromStringToHex(matchU[0]["RGB"]);
+        document.getElementById('pageU').innerHTML = matchU[0]["Page"];
+        document.getElementById('familyU').innerHTML = matchU[0]["The color family"];
+        document.getElementById('idU').innerHTML = matchU[0]["ID"];
+        document.getElementById('cardU').innerHTML = matchU[0]["The color name"];
+        document.getElementById('RGBU').innerHTML = matchU[0]["RGB"];
+        document.getElementById('HEXU').innerHTML = fromStringToHex(matchU[0]["RGB"]);
+        let URL_link1 = `https://tambour.co.il/color/${matchU[0]["The color family"]}/${matchU[0]["The color name"].replaceAll(" ", "-")}/`;
+        document.getElementById('cardLinkU').setAttribute("href", URL_link1);
+        document.getElementById('cardLinkU').innerHTML = "click me for Color Tambour Chart link";
+    }
+});
 
-        // const colorThief = new ColorThief();
-        // const img = document.getElementById('upload');
-        // const img1 = document.getElementById('upload1');
-        // // Make sure image is finished loading
-        // if (img.complete) {
-        //     colorThief.getColor(img);
-        //     colorThief.getPalette(img, 3, 10)
-        // } else {
-        //     img.addEventListener('load', function () {
-        //         colorThief.getColor(img);
-        //     });
-        // }
-        // // Make sure image is finished loading
-        // if (img1.complete) {
-        //     colorThief.getColor(img1);
-        //     colorThief.getPalette(img1, 3, 10)
-        // } else {
-        //     img1.addEventListener('load', function () {
-        //         colorThief.getColor(img1);
-        //     });
-        // }
-        // let whiteColor = colorThief.getPalette(img1, 3, 10)[0];
-        // let imgColor = showPalette(colorThief.getPalette(img, 3, 10), 3);
-        // let card1 = hexToRgb(imgColor[0]).r + ";" + hexToRgb(imgColor[0]).g + ";" + hexToRgb(imgColor[0]).b;
-        // let match1 = matchColorFamily(arrObj1, card1, familyNameLive);
-        // console.log(whiteColor)
-        // document.getElementById('Platte').style.backgroundColor = fromStringToHex(match1[0]["RGB"]);
-        // document.getElementById('page1').innerHTML = match1[0]["Page"];
-        // document.getElementById('family1').innerHTML = match1[0]["The color family"];
-        // document.getElementById('id1').innerHTML = match1[0]["ID"];
-        // document.getElementById('card1').innerHTML = match1[0]["The color name"];
-        // document.getElementById('RGB1').innerHTML = match1[0]["RGB"];
-        // document.getElementById('HEX1').innerHTML = fromStringToHex(match1[0]["RGB"]);
-        // let URL_link1 = `https://tambour.co.il/color/${match1[0]["The color family"]}/${match1[0]["The color name"].replaceAll(" ", "-")}/`;
-        // document.getElementById('cardLink1').setAttribute("href", URL_link1);
-        // document.getElementById('cardLink1').innerHTML = "click me for Color Tambour Chart link";
+var colorPicker = new ImageColorPicker('.thumbnail1 img', {
+    preview: '.preview1',
+    clicked: function (data) {
+        // instance data
 
     }
 });
+
 
 
 

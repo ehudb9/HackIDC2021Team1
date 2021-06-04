@@ -1,0 +1,8 @@
+{
+  "name": "ColorVision",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "colorthief": "^2.3.2"
+  }
+}
