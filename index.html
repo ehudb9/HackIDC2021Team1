@@ -1,322 +1,402 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Vision</title>
-  <meta name="author" content="Yarin Michael Bouzaglo"/>
-  <link href="style.css" rel="stylesheet"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
-        rel="stylesheet">
-  <link rel="icon" href="img/icon.png" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-          crossorigin="anonymous"></script>
-  <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
-
-
-  
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Color Vision</title>
+    <meta name="author" content="Yarin Michael Bouzaglo"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+          rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+    <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
 </head>
-
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">ColorVision<span>.</span></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+<!-- header -->
+<div class="text-center" id="header">
+    <header>
+        <img rel="icon" src="img/colorVisionLOGO.png" width="250" height="132.8" class="my-5">
+        <h2> What You See Is What You Get.</h2>
+    </header>
+</div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Get Your Color</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <div class="container-fluid text-center" id="header">
-        <header>
-            <img rel="icon" src="img/colorVisionLOGO.png" width="250" height="132.8" class="my-5">
-            <h4> What You See Is What You Get.</h4>
-        </header>
-    </div>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= Instructions Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container" data-aos="fade-up">
+<!-- ======= Instructions Section ======= -->
+<h2 class="my-3">Photography Guidelines:</h2>
+<section id="featured-services" class="featured-services my-5">
+    <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bi-camera"></i></div>
-              <h4 class="title"><a href="">CLEAN THE LENS</a></h4>
-              <p class="description">Make sure your camera lens is clean, otherwise clean it gently</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon"><i class="bi-camera"></i></div>
+                    <h4 class="title"><a href="">CLEAN THE LENS</a></h4>
+                    <p class="description">Make sure your camera lens is clean, otherwise clean it gently</p>
+                </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bi-arrows-fullscreen"></i></div>
-              <h4 class="title"><a href="">POSITION YOURSELF</a></h4>
-              <p class="description">Take a step away from the photographed object</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon"><i class="bi-arrows-fullscreen"></i></div>
+                    <h4 class="title"><a href="">POSITION YOURSELF</a></h4>
+                    <p class="description">Take a step away from the photographed object</p>
+                </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bi-circle-square"></i></div>
-              <h4 class="title"><a href="">FOCUS THE CAMERA</a></h4>
-              <p class="description">Take a long press on the desired point on the screen to lock the image</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="bx bi-circle-square"></i></div>
+                    <h4 class="title"><a href="">FOCUS THE CAMERA</a></h4>
+                    <p class="description">Take a long press on the desired point on the screen to lock the image</p>
+                </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bi-phone-landscape"></i></div>
-              <h4 class="title"><a href="">TAKE A LATERAL PHOTO</a></h4>
-              <p class="description">A lateral photo will improve the result</p>
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon"><i class="bi-phone-landscape"></i></div>
+                    <h4 class="title"><a href="">TAKE A LATERAL PHOTO</a></h4>
+                    <p class="description">A lateral photo will improve the result</p>
+                </div>
             </div>
-          </div>
 
         </div>
 
-      </div>
-    </section><!-- End Featured Services Section -->
-    <!-- upload btn -->
-<section class="my-5">
-  
-</section>
-<!-- upload pictures -->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6" >
-      <h2 class="h1-responsive font-weight-bold"> Your picture:</h2>
-        <!-- Section heading -->
-          <h2 class="h1-responsive font-weight-bold">Upload your picture 1:</h2>
-          <!-- Section description -->
-          <form>
-              <input type="file" id="fileElem" multiple accept="image/*" style="display:none">
-              <button href="#" id="fileSelect" class="btn btn-dark myButton">Upload 1</button>
-              <div id="fileList">
-              </div>
-          </form>
+    </div>
+</section><!-- End Instruction Section -->
+<div class="d-flex justify-content-center" id="ehud">
+    <div class="text-center flex-item-left my-5" id="frame">
+
+        <h2 class="h1-responsive font-weight-bold">Upload Your Own Photo.</h2>
+        <!-- Section description -->
+        <form>
+            <input type="file" id="fileElem" multiple accept="image/*" style="display:none">
+            <button href="#" id="fileSelect" class="btn btn-dark myButton" style="background-color: #116B56">Upload
+            </button>
+            <div id="fileList">
+            </div>
+        </form>
+        <h2 class="h1-responsive font-weight-bold"> Your picture:</h2>
         <!-- image display -->
         <div class="thumbnail">
             <div class="preview" id="preview"></div>
             <img id="upload" alt="" src="img/icon.png" class="rounded" alt="Responsive image">
         </div>
     </div>
-    <div class="col-sm-6" >
-      <h2 class="h1-responsive font-weight-bold">Upload your 2:</h2>
-      <!-- Section description -->
-      <form>
-          <input type="file" id="fileElem1" multiple accept="image/*" style="display:none">
-          <button href="#" id="fileSelect1" class="btn btn-dark myButton">Upload 2</button>
-          <div id="fileList1">
-          </div>
-      </form>
-    <!-- data display -->
-    <div class="text-left col-lg-6" id="frame1">
-        <h2 class="h1-responsive font-weight-bold"> Your white picture:</h2>
+    <div class="text-center flex-item-right my-5" id="frame1">
+        <!-- Section heading -->
+        <h2 class="h1-responsive font-weight-bold">Upload white page color.</h2>
+        <h4 class="h1-responsive font-weight-bold">Extension for white colors</h4>
+        <!-- Section description -->
+        <form>
+            <input type="file" id="fileElem1" multiple accept="image/*" style="display:none">
+            <button href="#" id="fileSelect1" class="btn btn-dark myButton" style="background-color: #116B56">Upload
+            </button>
+            <div id="fileList1">
+            </div>
+        </form>
+        <h2 class="h1-responsive font-weight-bold"> Your white page picture:</h2>
         <!-- image display -->
-        <div class="thumbnail">
-            <div class="preview" id="preview1"></div>
-            <img id="upload1" alt="" src="img/icon.png" class="rounded" alt="Responsive image">
+        <div class="thumbnail1">
+            <div class="preview1" id="preview1"></div>
+            <img id="upload1" alt="" src="img/white.jpg" class="rounded" alt="Responsive image">
         </div>
     </div>
-    </div>
-  </div>
 </div>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
-      <div class="container" data-aos="fade-up">
+<form id="familySection">
+    <h2 class="h1-responsive font-weight-bold my-5"> Please choose a color family</h2>
+    <div class="form-check form-check-inline my-5">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Whites"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio1">Whites</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Reds"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio2">Reds</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Oranges"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio3">Oranges</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Yellows"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio4">Yellows</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Greens"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio5">Greens</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Blues"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio6">Blues</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Purples"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio7">Purples</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Neutrals"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio8">Neutrals</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="none"
+               onclick='handleClick(this);' Checked="checked">
+        <label class="form-check-label" for="inlineRadio8">none</label>
+    </div>
+</form>
 
-        <div class="section-title">
-          <h2>Get Your Color</h2>
-          <h3>Choose your <span>Color Family</span></h3>
-          <p></p>
-          <input class="btn btn-primary" id="red_color" type="button" value="Reds">
-          <input class="btn btn-primary" id="white_color" type="submit" value="Whites">
-          <input class="btn btn-primary" id="orange_color" type="reset" value="Oranges">
-          <input class="btn btn-primary" id="yellow_color" type="reset" value="Yellows">
-          <input class="btn btn-primary" id="green_color" type="reset" value="Greens">
-          <input class="btn btn-primary" id="blue_color" type="reset" value="Blues">
-          <input class="btn btn-primary" id="purple_color" type="reset" value="Purples">
-          <input class="btn btn-primary" id="neutral_color" type="reset" value="Neutrals">
+<h2 class="h1-responsive font-weight-bold"> Vector distance </h2>
+<div class="d-flex justify-content-center my-5">
+    <div class="d-flex my-5">
+        <div class="card" style="width: 18rem;" id="PlatteU">
+            <div class="card-body">
+                <h2 class="h1-responsive font-weight-bold">Sample match</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Page: <strong id="pageU"
+                                                              class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color family: <strong id="familyU"
+                                                                          class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color name: <strong id="cardU"
+                                                                        class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">ID: <strong id="idU"
+                                                            class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">RGB: <strong id="RGBU"
+                                                             class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">HEX: <strong id="HEXU"
+                                                             class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="font-weight-bold card-title">Link: <strong
+                            class="lead grey-text w-responsive  card-title"><a
+                            href="url" id="cardLinkU"
+                            target="_blank"></a></strong></h5>
+                </div>
+            </div>
         </div>
-      </div>
-      
-    <!-- ======= Skills Section ======= -->
+    </div>
+</div>
 
-    <section id="skills" class="skills">
-      <div class="container" data-aos="fade-up">
 
-        <div class="row skills-content">
+<h2 class="h1-responsive font-weight-bold"> Here are the best results by ML algorithm</h2>
 
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+<div class="d-flex justify-content-center my-5">
+    <div class="d-flex my-5">
+        <div class="card" style="width: 18rem;" id="Platte1">
+            <div class="card-body">
+                <h2 class="h1-responsive font-weight-bold">2nd match</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Page: <strong id="page2"
+                                                              class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color name: <strong id="card2"
+                                                                        class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">ID: <strong id="id2"
+                                                            class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="font-weight-bold card-title">Link: <strong
+                            class="lead grey-text w-responsive  card-title"><a
+                            href="url" id="cardLink2"
+                            target="_blank"></a></strong></h5>
+                </div>
             </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-
-
-
-      </div>
-    </section><!-- End Skills Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-sort-numeric-up"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div>
         </div>
-
-      </div>
-    </section><!-- End Counts Section -->
-
-
-  </main><!-- End #main -->
- <div class="card-group" id="colorPaletteGroup">
-    <div class="card" id="Platte">
+    </div>
+    <div class="card" style="width: 18rem;" id="Platte">
         <div class="card-body">
-            <h4 class="font-weight-bold card-title"> Color Chart Match By ML alg:
-            </h4>
-            <h4 class="font-weight-bold card-title">Page: <strong id="page1"
-                                                                  class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h4 class="font-weight-bold card-title">The color family: <strong id="family1"
-                                                                              class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h4 class="font-weight-bold card-title">The color name: <strong id="card1"
-                                                                            class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h4 class="font-weight-bold card-title">ID: <strong id="id1"
-                                                                class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h4 class="font-weight-bold card-title">RGB: <strong id="RGB1"
-                                                                 class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h4 class="font-weight-bold card-title">HEX: <strong id="HEX1"
-                                                                 class="lead grey-text w-responsive  card-title">Waiting
-                for your
-                Picture</strong>
-            </h4>
-            <h5 class="font-weight-bold card-title">Link: <strong
-                    class="lead grey-text w-responsive  card-title"><a
-                    href="url" id="cardLink1"
-                    target="_blank"></a></strong></h5>
+            <h2 class="h1-responsive font-weight-bold">Excellent match</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Page: <strong id="page1"
+                                                          class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">The color family: <strong id="family1"
+                                                                      class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">The color name: <strong id="card1"
+                                                                    class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">ID: <strong id="id1"
+                                                        class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">RGB: <strong id="RGB1"
+                                                         class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">HEX: <strong id="HEX1"
+                                                         class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+            </ul>
+            <div class="card-body">
+                <h5 class="font-weight-bold card-title">Link: <strong
+                        class="lead grey-text w-responsive  card-title"><a
+                        href="url" id="cardLink1"
+                        target="_blank"></a></strong></h5>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex my-5">
+        <div class="card" style="width: 18rem;" id="Platte2">
+            <div class="card-body">
+                <h2 class="h1-responsive font-weight-bold">3rd match</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Page: <strong id="page3"
+                                                              class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color name: <strong id="card3"
+                                                                        class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">ID: <strong id="id3"
+                                                            class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="font-weight-bold card-title">Link: <strong
+                            class="lead grey-text w-responsive  card-title"><a
+                            href="url" id="cardLink3"
+                            target="_blank"></a></strong></h5>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <form>
-    <button formaction="https://tambour.co.il/store-locate/" id="navigate" class="btn btn-dark myButton" target="_blank">נווט לחנות הקרובה ביותר</button>
- </form>
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<h2 class="h1-responsive font-weight-bold"> Image processing Extension for white colors</h2>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="colorIdentifier.js"></script>
-  <script src="colorFunCode.js"></script>
+<div class="d-flex justify-content-center my-5">
+    <div class="d-flex my-5">
+        <div class="card" style="width: 18rem;" id="Platte5">
+            <div class="card-body">
+                <h2 class="h1-responsive font-weight-bold">2nd match</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Page: <strong id="page5"
+                                                              class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color name: <strong id="card5"
+                                                                        class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">ID: <strong id="id5"
+                                                            class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="font-weight-bold card-title">Link: <strong
+                            class="lead grey-text w-responsive  card-title"><a
+                            href="url" id="cardLink5"
+                            target="_blank"></a></strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;" id="Platte4">
+        <div class="card-body">
+            <h2 class="h1-responsive font-weight-bold">Excellent match</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Page: <strong id="page4"
+                                                          class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">The color family: <strong id="family4"
+                                                                      class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">The color name: <strong id="card4"
+                                                                    class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">ID: <strong id="id4"
+                                                        class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">RGB: <strong id="RGB4"
+                                                         class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+                <li class="list-group-item">HEX: <strong id="HEX4"
+                                                         class="lead grey-text w-responsive  card-title">Waiting
+                    for your
+                    Picture</strong></li>
+            </ul>
+            <div class="card-body">
+                <h5 class="font-weight-bold card-title">Link: <strong
+                        class="lead grey-text w-responsive  card-title"><a
+                        href="url" id="cardLink4"
+                        target="_blank"></a></strong></h5>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex my-5">
+        <div class="card" style="width: 18rem;" id="Platte6">
+            <div class="card-body">
+                <h2 class="h1-responsive font-weight-bold">3rd match</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Page: <strong id="page6"
+                                                              class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">The color name: <strong id="card6"
+                                                                        class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                    <li class="list-group-item">ID: <strong id="id6"
+                                                            class="lead grey-text w-responsive  card-title">Waiting
+                        for your
+                        Picture</strong></li>
+                </ul>
+                <div class="card-body">
+                    <h5 class="font-weight-bold card-title">Link: <strong
+                            class="lead grey-text w-responsive  card-title"><a
+                            href="url" id="cardLink6"
+                            target="_blank"></a></strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="colorIdentifier.js"></script>
+<script src="colorFunCode.js"></script>
 </body>
 
-</html
+</html>

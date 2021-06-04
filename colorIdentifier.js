@@ -71,6 +71,23 @@ function showPalette(arr, num) {
     return arrOfHex
 }
 
+function checkDiffFromWhite(whiteInputRgb) {
+    let diff = [0.0, 0.0, 0.0];
+    for (let i = 0; i < whiteInputRgb.length; i++) {
+        diff[i] = 255 - whiteInputRgb[i];
+    }
+    return diff;
+}
+
+function fixInputRgb(diffRgb, inputRgb) {
+    let fixedRgb = [0.0, 0.0, 0.0];
+    for (let i = 0; i < inputRgb.length; i++) {
+        fixedRgb[i] = diffRgb[i] + inputRgb[i];
+        fixedRgb[i] = fixedRgb[i] > 255 ? 255 : fixedRgb[i];
+    }
+    return fixedRgb;
+}
+
 var ImageColorPicker = function (img_selector, opt) {
 
     // vars
@@ -204,24 +221,6 @@ var ImageColorPicker = function (img_selector, opt) {
     }
 };
 
-function checkDiffFromWhite(whiteInputRgb){
-    let diff = [0.0 , 0.0, 0.0];
-    for (let i = 0; i < whiteInputRgb.length;i++) {
-        diff[i] = 255 - whiteInputRgb[i];
-    }
-    return diff;
-}
-
-function fixInputRgb(diffRgb , inputRgb){
-    let fixedRgb = [0.0 , 0.0, 0.0];
-    for (let i = 0; i < inputRgb.length;i++){
-        fixedRgb[i] = diffRgb[i]+inputRgb[i];
-        fixedRgb[i] =  fixedRgb[i] > 255 ? 255 : fixedRgb[i];
-    }
-    return fixedRgb;
-}
-
-
 function handleClick(cb) {
     familyNameLive = cb.value
     const colorThief = new ColorThief();
@@ -245,21 +244,88 @@ function handleClick(cb) {
             colorThief.getColor(img1);
         });
     }
+    let KmeanColor = colorThief.getColor(img, 10)
+    let temp;
+    let match2;
+    console.log("this is Kmean arr" + KmeanColor)
+    switch(familyNameLive) {
+        case (familyNameLive.localeCompare("Greens")):
+            temp = [134,191,189]
+            match2 = matchARRColorFamily(arrObj1, temp, familyNameLive);
+            break;
+        case (familyNameLive===("Yellows")):
+            // code block
+            temp = [179,192,101]
+            match2 = matchARRColorFamily(arrObj1, temp, familyNameLive);
+
+            break;
+        case (familyNameLive===("Reds")):
+            temp = [209,167,161]
+            match2 = matchARRColorFamily(arrObj1, temp, familyNameLive);
+            break;
+        default:
+            match2 = matchARRColorFamily(arrObj1, KmeanColor, familyNameLive);
+    }
+    console.log(KmeanColor)
+    document.getElementById('Platte').style.backgroundColor = fromStringToHex(match2[0]["RGB"]);
+    document.getElementById('page1').innerHTML = match2[0]["Page"];
+    document.getElementById('family1').innerHTML = match2[0]["The color family"];
+    document.getElementById('id1').innerHTML = match2[0]["ID"];
+    document.getElementById('card1').innerHTML = match2[0]["The color name"];
+    document.getElementById('RGB1').innerHTML = match2[0]["RGB"];
+    document.getElementById('HEX1').innerHTML = fromStringToHex(match2[0]["RGB"]);
+    let URL_link1 = `https://tambour.co.il/color/${match2[0]["The color family"]}/${match2[0]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink1').setAttribute("href", URL_link1);
+    document.getElementById('cardLink1').innerHTML = "click me for Color Tambour Chart link";
+
+    document.getElementById('Platte1').style.backgroundColor = fromStringToHex(match2[1]["RGB"]);
+    document.getElementById('page2').innerHTML = match2[1]["Page"];
+    document.getElementById('id2').innerHTML = match2[1]["ID"];
+    document.getElementById('card2').innerHTML = match2[1]["The color name"];
+    let URL_link2 = `https://tambour.co.il/color/${match2[1]["The color family"]}/${match2[1]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink2').setAttribute("href", URL_link2);
+    document.getElementById('cardLink2').innerHTML = "click me for Color Tambour Chart link";
+
+    document.getElementById('Platte2').style.backgroundColor = fromStringToHex(match2[2]["RGB"]);
+    document.getElementById('page3').innerHTML = match2[2]["Page"];
+    document.getElementById('id3').innerHTML = match2[2]["ID"];
+    document.getElementById('card3').innerHTML = match2[2]["The color name"];
+    let URL_link3 = `https://tambour.co.il/color/${match2[2]["The color family"]}/${match2[2]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink3').setAttribute("href", URL_link3);
+    document.getElementById('cardLink3').innerHTML = "click me for Color Tambour Chart link";
+
+
     let whiteColor = colorThief.getPalette(img1, 3, 10)[0];
     let distFromWhite = checkDiffFromWhite(whiteColor)
     let realColor = colorThief.getPalette(img, 3, 10)[0];
-    let newColor = fixInputRgb(distFromWhite,realColor)
-    let imgColor = showPalette(colorThief.getPalette(img, 3, 10), 3);
-    let card1 = hexToRgb(imgColor[0]).r + ";" + hexToRgb(imgColor[0]).g + ";" + hexToRgb(imgColor[0]).b;
-    let match1 = matchColorFamily(arrObj1, card1, familyNameLive);
-    document.getElementById('Platte').style.backgroundColor = fromStringToHex(match1[0]["RGB"]);
-    document.getElementById('page1').innerHTML = match1[0]["Page"];
-    document.getElementById('family1').innerHTML = match1[0]["The color family"];
-    document.getElementById('id1').innerHTML = match1[0]["ID"];
-    document.getElementById('card1').innerHTML = match1[0]["The color name"];
-    document.getElementById('RGB1').innerHTML = match1[0]["RGB"];
-    document.getElementById('HEX1').innerHTML = fromStringToHex(match1[0]["RGB"]);
-    let URL_link1 = `https://tambour.co.il/color/${match1[0]["The color family"]}/${match1[0]["The color name"].replaceAll(" ", "-")}/`;
-    document.getElementById('cardLink1').setAttribute("href", URL_link1);
-    document.getElementById('cardLink1').innerHTML = "click me for Color Tambour Chart link";
+    let newColor = fixInputRgb(distFromWhite, realColor)
+    let card1 = newColor[0] + ";" + newColor[0] + ";" + newColor[0];
+    let match1 = searchFamily(arrObj1, card1, familyNameLive);
+
+    document.getElementById('Platte4').style.backgroundColor = fromStringToHex(match1[0]["RGB"]);
+    document.getElementById('family4').innerHTML = match1[0]["The color family"];
+    document.getElementById('page4').innerHTML = match1[0]["Page"];
+    document.getElementById('id4').innerHTML = match1[0]["ID"];
+    document.getElementById('card4').innerHTML = match1[0]["The color name"];
+    document.getElementById('RGB4').innerHTML = match1[0]["RGB"];
+    document.getElementById('HEX4').innerHTML = fromStringToHex(match1[0]["RGB"]);
+    let URL_link4 = `https://tambour.co.il/color/${match1[0]["The color family"]}/${match1[0]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink4').setAttribute("href", URL_link4);
+    document.getElementById('cardLink4').innerHTML = "click me for Color Tambour Chart link";
+
+    document.getElementById('Platte5').style.backgroundColor = fromStringToHex(match1[1]["RGB"]);
+    document.getElementById('page5').innerHTML = match1[1]["Page"];
+    document.getElementById('id5').innerHTML = match1[1]["ID"];
+    document.getElementById('card5').innerHTML = match1[1]["The color name"];
+    let URL_link5 = `https://tambour.co.il/color/${match1[1]["The color family"]}/${match1[1]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink5').setAttribute("href", URL_link5);
+    document.getElementById('cardLink5').innerHTML = "click me for Color Tambour Chart link";
+
+    document.getElementById('Platte6').style.backgroundColor = fromStringToHex(match1[2]["RGB"]);
+    document.getElementById('page6').innerHTML = match1[2]["Page"];
+    document.getElementById('id6').innerHTML = match1[2]["ID"];
+    document.getElementById('card6').innerHTML = match1[2]["The color name"];
+    let URL_link6 = `https://tambour.co.il/color/${match1[2]["The color family"]}/${match1[2]["The color name"].replaceAll(" ", "-")}/`;
+    document.getElementById('cardLink6').setAttribute("href", URL_link6);
+    document.getElementById('cardLink6').innerHTML = "click me for Color Tambour Chart link";
 }
