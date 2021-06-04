@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Vision</title>
+    <meta name="author" content="Yarin Michael Bouzaglo"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+          rel="stylesheet">
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+    <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
+    <link rel="stylesheet" href="bs-stepper.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<!-- nav -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">ColorVision</a>
+</nav>
+
+<!-- header -->
+<div class="container-fluid text-center" id="header">
+    <header>
+        <img rel="icon" src="img/colorVisionLOGO.png" width="250" height="132.8" class="my-5">
+        <br>
+        <h2> What You See Is What You Get.</h2>
+    </header>
+</div>
+
+<!-- upload btn -->
+<section class="my-5">
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold">Upload your picture 1:</h2>
+    <!-- Section description -->
+    <form>
+        <input type="file" id="fileElem" multiple accept="image/*" style="display:none">
+        <button href="#" id="fileSelect" class="btn btn-dark myButton">Upload 1</button>
+        <div id="fileList">
+        </div>
+    </form>
+</section>
+<section class="my-5">
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold">Upload your 2:</h2>
+    <!-- Section description -->
+    <form>
+        <input type="file" id="fileElem1" multiple accept="image/*" style="display:none">
+        <button href="#" id="fileSelect1" class="btn btn-dark myButton">Upload 2</button>
+        <div id="fileList1">
+        </div>
+    </form>
+</section>
+<form>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Whites"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio1">Whites</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Reds"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio2">Reds</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Oranges"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio3">Oranges</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Yellows"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio4">Yellows</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Greens"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio5">Greens</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="Blues"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio6">Blues</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="Purples"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio7">Purples</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="Neutrals"
+               onclick='handleClick(this);'>
+        <label class="form-check-label" for="inlineRadio8">Neutrals</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="none"
+               onclick='handleClick(this);' Checked="checked">
+        <label class="form-check-label" for="inlineRadio8">none</label>
+    </div>
+</form>
+<div class="row">
+
+    <div class="text-left col-lg-6" id="frame">
+
+        <h2 class="h1-responsive font-weight-bold"> Your picture:</h2>
+        <!-- image display -->
+        <div class="thumbnail">
+            <div class="preview" id="preview"></div>
+            <img id="upload" alt="" src="img/icon.png" class="rounded" alt="Responsive image">
+        </div>
+    </div>
+
+    <!-- data display -->
+    <div class="text-left col-lg-6" id="frame1">
+        <h2 class="h1-responsive font-weight-bold"> Your white picture:</h2>
+        <!-- image display -->
+        <div class="thumbnail">
+            <div class="preview" id="preview1"></div>
+            <img id="upload1" alt="" src="img/icon.png" class="rounded" alt="Responsive image">
+        </div>
+    </div>
+</div>
+
+<!-- colorPalette display -->
+<div class="card-group" id="colorPaletteGroup">
+    <div class="card" id="Platte">
+        <div class="card-body">
+            <h4 class="font-weight-bold card-title"> Color Chart Match By ML alg:
+            </h4>
+            <h4 class="font-weight-bold card-title">Page: <strong id="page1"
+                                                                  class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h4 class="font-weight-bold card-title">The color family: <strong id="family1"
+                                                                              class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h4 class="font-weight-bold card-title">The color name: <strong id="card1"
+                                                                            class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h4 class="font-weight-bold card-title">ID: <strong id="id1"
+                                                                class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h4 class="font-weight-bold card-title">RGB: <strong id="RGB1"
+                                                                 class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h4 class="font-weight-bold card-title">HEX: <strong id="HEX1"
+                                                                 class="lead grey-text w-responsive  card-title">Waiting
+                for your
+                Picture</strong>
+            </h4>
+            <h5 class="font-weight-bold card-title">Link: <strong
+                    class="lead grey-text w-responsive  card-title"><a
+                    href="url" id="cardLink1"
+                    target="_blank"></a></strong></h5>
+        </div>
+    </div>
+</div>
+
+<!-- gggggggggggggggggggggggggggggggggfffffff -->
+<div class="w3-card-4">
+    <div class="w3-display-container w3-text-white">
+      <img src="img_london.jpg" alt="Lights" style="width:80%">
+      <div class="w3-xlarge w3-display-bottomleft w3-padding">LONDON 60&deg; F</div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-third w3-center">
+        <h3>MON</h3>
+        <img src="img_weather_sun.jpg" alt="sun">
+      </div>
+      <div class="w3-third w3-center">
+        <h3>TUE</h3>
+        <img src="img_weather_cloud.jpg" alt="cloud">
+      </div>
+      <div class="w3-third w3-center w3-margin-bottom">
+        <h3>WED</h3>
+        <img src="img_weather_clouds.jpg" alt="clouds">
+      </div>
+    </div>
+  </div>
+
+
+<form>
+   <button formaction="https://tambour.co.il/store-locate/" id="navigate" class="btn btn-dark myButton" target="_blank">נווט לחנות הקרובה ביותר</button>
+</form>
+<script src="bs-stepper.min.js"></script>
+<script src="colorIdentifier.js"></script>
+<script src="colorFunCode.js"></script>
+</body>
+
+</html>
